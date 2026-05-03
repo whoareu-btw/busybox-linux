@@ -17,7 +17,7 @@ Every kernel config based on my machine (HP Notebook 14 AC150TU) and ext4 for fi
 #### Init:
 This is simple configuration for init I make:
 
-'''
+'''sh
 #!/bin/sh
 echo "init start"
 

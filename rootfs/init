@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "init start"
+
+echo "mounting"
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs devtmpfs /dev
+
+echo "Finally, i guess"
+
+exec setsid cttyhack /bin/sh

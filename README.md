@@ -7,9 +7,27 @@ Here's what i've do with this experiment:
 - Use static build.
 - Remove tc on networking.
 
-#### Musl-libx:
-- I use configuration "./configure --prefix=/usr --syslibdir=/lib --enable-static --disable-shared" before compile it with Make.
+#### Musl-libc:
+I use configuration "./configure --prefix=/usr --syslibdir=/lib --enable-static --disable-shared" before compile it with Make.
 
 #### Linux-kernel:
-- I use LTS kernel version, I use on version 6.12.85 .
-- Every kernel config based on my machine (HP Notebook 14 AC150TU) and ext4 for filesystem.
+I use LTS kernel version, I use on version 6.12.85 .
+Every kernel config based on my machine (HP Notebook 14 AC150TU) and ext4 for filesystem.
+
+#### Init:
+This is simple configuration for init I make:
+
+#!/bin/sh
+echo "init start"
+
+echo "mounting"
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs devtmpfs /dev
+
+echo "Finally, i guess"
+
+exec setsid cttyhack /bin/sh
+
+#### Note:
+The init configuration I've been make it executable, if not executable use "chmod +x rootfs/init"

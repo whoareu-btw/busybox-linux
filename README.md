@@ -17,7 +17,7 @@ Every kernel config based on my machine (HP Notebook 14 AC150TU) and ext4 for fi
 #### Init:
 This is simple configuration for init I make:
 
-'''sh
+```sh
 #!/bin/sh
 echo "init start"
 
@@ -29,6 +29,6 @@ mount -t devtmpfs devtmpfs /dev
 echo "Finally, i guess"
 
 exec setsid cttyhack /bin/sh
-'''
+```
 #### Note:
 The init configuration I've been make it executable, if not executable use "chmod +x rootfs/init"

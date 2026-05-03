@@ -32,3 +32,6 @@ exec setsid cttyhack /bin/sh
 ```
 #### Note:
 The init configuration I've been make it executable, if not executable use "chmod +x rootfs/init"
+
+
+Oh, I forgot my line. Have a nice day, nyan

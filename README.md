@@ -5,7 +5,7 @@ Here's what i've do with this experiment:
 
 #### Busybox:
 - Use static build.
-- Remove tc on networking.
+- Remove tc, dhcpc and dhcpcd on networking.
 
 #### Musl-libc:
 I use configuration "./configure --prefix=/usr --syslibdir=/lib --enable-static --disable-shared" before compile it with Make.

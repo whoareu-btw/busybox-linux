@@ -1,0 +1,33 @@
+# Busybox
+make defconfig
+make menuconfig
+make -j2
+make CONFIG_PREFIX=$HOME/devos/rootfs install
+
+# Musl
+./configure --prefix=/usr
+make -j2
+make DESTDIR=$HOME/devos/rootfs install
+
+# Kernel
+make defconfig
+make menuconfig
+make -j2
+
+# Initramfs (do this at "rootfs" directory)
+find . | cpio -H newc -o | gzip > ../initramfs.img
+
+# Depedency (based on debian or ubuntu | if i forgot one of the deps, I'll change it later)
+- build-essential
+- flex
+- bison
+- bc
+- file
+- cpio
+- pkgconf (if you need it)
+- openssl
+- libssl-dev
+- libelf-dev
+- libncurses-dev
+- libncurses6 
+- libncursesw6 

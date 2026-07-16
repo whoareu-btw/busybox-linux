@@ -26,7 +26,7 @@ void print_os() {
 void print_kernel() {
    struct utsname uts;
    uname(&uts);
-   printf("Kernel       : %s\n", uts.release);
+   printf("Kernel  : %s\n", uts.release);
 }
 
 void print_cpu() {
@@ -39,7 +39,7 @@ void print_cpu() {
          if (cpu) {
             cpu +=2;
             cpu[strcspn(cpu, "\n")] = '\0';
-            printf("CPU          : %s\n", cpu);
+            printf("CPU     : %s\n", cpu);
             break;
          }
       }
@@ -64,11 +64,11 @@ void print_ram() {
    }
 
    if (fp) fclose(fp);
-   printf("Memory       : %.1f / %.1f GB\n",
+   printf("Memory  : %.1f / %.1f GB\n",
          (memTotal - memAvail) / 1024.0 / 1024.0,
         memTotal / 1024.0 / 1024.0);
 
-   printf("Swap         : %.1f / %.1f GB\n",
+   printf("Swap    : %.1f / %.1f GB\n",
          (swapTotal - swapFree) / 1024.0 / 1024.0,
          swapTotal / 1024.0 / 1024.0);
 }
@@ -81,7 +81,7 @@ void print_uptime() {
       int h =up / 3600;
       int m = ((int)up % 3600) / 60;
 
-      printf("Uptime       : %dh %dm\n\n", h, m);
+      printf("Uptime  : %dh %dm\n\n", h, m);
    }
    if (fp) fclose(fp);
 }
